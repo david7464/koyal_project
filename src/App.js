@@ -17,7 +17,10 @@ import { makeStyles } from "@material-ui/core/styles";
 function App() {
   return (
     <>
-      <Card style={{ maxWidth: 450, margin: "0 auto", padding: "20px 5px" }}>
+      <Card
+        style={{ maxWidth: 450, margin: "0 auto", padding: "20px 5px" }}
+        margin="normal"
+      >
         <CardContent>
           <Typography gutterBottom variant="h5">
             Contect Us
