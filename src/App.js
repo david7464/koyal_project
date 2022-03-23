@@ -18,7 +18,13 @@ function App() {
   return (
     <>
       <Card
-        style={{ maxWidth: 450, margin: "0 auto", padding: "20px 5px" }}
+        style={{
+          maxWidth: 450,
+          margin: "0 auto",
+          padding: "20px 5px",
+          paddingTop: "5px",
+          marginTop: "30px",
+        }}
         margin="normal"
       >
         <CardContent>
@@ -26,7 +32,7 @@ function App() {
             Contect Us
           </Typography>
           <form>
-            <Grid container spacing={1}>
+            <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
                   label="First Name"
@@ -45,7 +51,7 @@ function App() {
               </Grid>
               <Grid xs={12} item>
                 <TextField
-                  lable="Email"
+                  label="Email"
                   type="email"
                   placeholder="Enter Email"
                   fullWidth
@@ -54,7 +60,7 @@ function App() {
               </Grid>
               <Grid xs={12} item>
                 <TextField
-                  lable="Phone Number"
+                  label="Phone Number"
                   type="number"
                   placeholder="Enter Phone Number"
                   fullWidth
@@ -63,7 +69,7 @@ function App() {
               </Grid>
               <Grid xs={12} item>
                 <TextField
-                  lable="Message"
+                  label="Message"
                   multiline
                   rows={4}
                   placeholder="Type Your Message"
