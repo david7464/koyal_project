@@ -8,101 +8,90 @@ import {
   Box,
   TextField,
   InputAdornment,
+  CardContent,
+  Card,
+  Grid,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: "100vw",
-    height: "100vh",
-    backgroundColor: theme.palette.grey[300],
-    paddingTop: "50px",
-  },
-  sp: {
-    backgroundColor: theme.palette.grey[200],
-    width: "100%",
-    height: "10vh",
-  },
-  wp: {
-    width: "100%",
-    height: "13vh",
-  },
-}));
 
 function App() {
-  const classes = useStyles();
   return (
     <>
-      <Container className={classes.root}>
-        <Paper component={Box} width="30%" mx="auto" p={4}>
-          <Typography variant="h5">Create New Accout</Typography>
-          <Box component="form" mt={2}>
-            <Box variant="h1" mt={1}>
-              Job
-            </Box>
-            <TextField
-              fullWidth
-              variant="outlined"
-              margin="normal"
-              color="secondary"
-              label="First Name"
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment>
-                    <ArrowForwardIosIcon fontSize="small" />
-                  </InputAdornment>
-                ),
-              }}
-            />
-            <Box borderBottom={1}></Box>
-            <Box variant="h1" mt={1}>
-              User
-            </Box>
-            <TextField
-              label="Last Name"
-              fullWidth
-              variant="outlined"
-              margin="normal"
-              color="secondary"
-            />
-            <Box borderBottom={1}></Box>
-            <Box variant="h2" className={classes.sp}>
-              <p style={{ paddingTop: "25px" }}>Time in/Time Out</p>
-            </Box>
-            <Box borderBottom={1}></Box>
+      <Card
+        style={{
+          maxWidth: 450,
+          margin: "0 auto",
+          padding: "20px 5px",
+          paddingTop: "5px",
+          marginTop: "30px",
+        }}
+        margin="normal"
+      >
+        <CardContent>
+          <Typography gutterBottom variant="h5">
+            Contect Us
+          </Typography>
+          <form>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  label="First Name"
+                  placeholder="Enter Your Name"
+                  fullWidth
+                  required
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  label="Last Name"
+                  placeholder="Enter Your Last Name"
+                  fullWidth
+                  required
+                />
+              </Grid>
+              <Grid xs={12} item>
+                <TextField
+                  label="Email"
+                  type="email"
+                  placeholder="Enter Email"
+                  fullWidth
+                  required
+                />
+              </Grid>
+              <Grid xs={12} item>
+                <TextField
+                  label="Phone Number"
+                  type="number"
+                  placeholder="Enter Phone Number"
+                  fullWidth
+                  required
+                />
+              </Grid>
+              <Grid xs={12} item>
+                <TextField
+                  label="Message"
+                  multiline
+                  rows={4}
+                  placeholder="Type Your Message"
+                  fullWidth
+                  required
+                />
+              </Grid>
 
-            <Box variant="h2" className={classes.wp}>
-              <p>Time in</p>
-              <p>Time in/Time Out</p>
-            </Box>
-            <Box borderBottom={1}></Box>
-
-            <Box borderBottom={1}></Box>
-            <Box variant="h2" className={classes.sp}>
-              <p style={{ paddingTop: "25px" }}>NEW SHIFT DETAILS</p>
-            </Box>
-            <Box borderBottom={1}></Box>
-
-            <Box variant="h1" pt={2}>
-              Cost Code
-            </Box>
-            <TextField
-              label="Last Name"
-              fullWidth
-              variant="outlined"
-              margin="normal"
-              color="secondary"
-            />
-            <Box borderBottom={1}></Box>
-
-            <Box variant="h1" pt={2}>
-              Tages
-            </Box>
-            <Box borderBottom={1}></Box>
-          </Box>
-        </Paper>
-      </Container>
+              <Grid xs={12} sm={12} item>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                  fullwidth
+                >
+                  Submit
+                </Button>
+              </Grid>
+            </Grid>
+          </form>
+        </CardContent>
+      </Card>
     </>
   );
 }
